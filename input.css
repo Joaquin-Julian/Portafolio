@@ -22,9 +22,49 @@
 }
 
 body {
-  color: #FAF0E6; 
+  color: #FAF0E6;
+  background-image: linear-gradient(45deg, rgba(0, 8, 20, 1), rgba(10, 25, 50, 1), rgba(0, 8, 20, 1));
 }
 
+/* Para las tarjetas de proyectos */
+.project-card {
+  /* Base de la tarjeta */
+  @apply basis-2/5 p-4 rounded-xl flex flex-col mb-10;
+  
+  /* Fondo con un ligero degradado */
+  background-image: linear-gradient(to bottom, rgba(0, 29, 61, 0.8), rgba(0, 8, 20, 0.9));
+  
+  /* Borde sutil */
+  border: 1px solid rgba(135, 206, 235, 0.1);
+  
+  /* Sombra más sutil y elegante */
+  box-shadow: 0 4px 20px rgba(255, 195, 0, 0.15),
+              0 0 0 1px rgba(255, 195, 0, 0.05);
+  
+  /* Transición suave al hacer hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Botón de enlace con mejores transiciones */
+.project-link {
+  @apply flex items-center bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2;
+  color: var(--color-azul-oscuro);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Para las imágenes dentro de las tarjetas */
+.project-card img.project-image {
+  @apply mb-5;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
 
 .header_links {
   position: relative;

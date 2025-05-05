@@ -6,7 +6,7 @@
     <title>Portafolio de Joaquín Julián</title>
     <link rel="stylesheet" href="assets/output.css">
 </head>
-<body class="bg-negro flex flex-col justify-center items-center gap-10">
+<body class="flex flex-col justify-center items-center gap-10">
     <header class="flex justify-center p-10 gap-10">
         <a href="#about_me" class="header_links text-xl text-blanco">Sobre mí</a>
         <a href="#projects" class="header_links text-xl text-blanco">Proyectos</a>
@@ -21,13 +21,15 @@
                     <h1 class="text-5xl text-amarillo-1 mb-2">Joaquín Julián</h1>
                     <h2>Software developer</h2>
                     <div class="mt-10 flex gap-5">
-                        <a href="" class="bg-blanco w-10 h-10 rounded-full flex items-center justify-center hover:bg-amarillo-1 transition-colors duration-300">
+                        <a href="https://github.com/Joaquin-Julian" rel="noopener noreferrer" target="_blank" class="bg-blanco w-10 h-10 rounded-full flex items-center justify-center hover:bg-amarillo-1 transition-colors duration-300">
                             <img src="./assets/images/icons/github.png" alt="Logo de GitHub" class="w-2/3 h-2/3">
                         </a>
-                        <a href="" class="bg-blanco w-10 h-10 rounded-full flex items-center justify-center hover:bg-amarillo-1 transition-colors duration-300">
+                        <a href="https://www.linkedin.com/in/joaquin-julian-765253304/" target="_blank" rel="noopener noreferrer" class="bg-blanco w-10 h-10 rounded-full flex items-center  justify-center hover:bg-amarillo-1 transition-colors duration-300">
                             <img src="./assets/images/icons/linkedin.png" alt="Logo de LinkedIn" class="w-2/3 h-2/3">
                         </a>
-                        <button class="descargar_curriculum"><span>Descargar currículum</span></button>    
+                        <a href="cv.pdf" download class="descargar_curriculum">
+                            <button><Span class="cursor-pointer">Descargar currículum</span></button>
+                        </a>                    
                     </div>              
                 </div>
             </div>
@@ -36,15 +38,15 @@
             </div>
         </section>
         <section id="projects" class="flex flex-col w-3/4 mx-20 items-center">
-            <h2 class="text-amarillo-1 text-3xl mb-8">Proyectos</h2>
+            <h2 class="text-amarillo-1 text-3xl mb-20">Proyectos</h2>
             <div class="flex flex-wrap gap-20 justify-center">
-                <div class="basis-2/5 p-4 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300]">
-                    <img src="./assets/images/projects/museo.png" alt="Captura de la aplicación de gestión del museo" class="mb-5">
+                <div class="project-card">
+                    <img src="./assets/images/projects/museo.png" alt="Captura de la aplicación de gestión del museo" class="project-image">
                     <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2">Aplicación de gestión de un museo</h3>
+                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Aplicación de gestión de un museo</h3>
                         <p class="mb-8">Aplicación personalizada para el museo Apel·les Fenosa, adaptada a sus necesidades: control de inventario, exposiciones, ubicaciones y restauraciones de las obras; sistema de registro
                             y gestión de usuarios; generación de copias de seguridad y exportación de datos a Excel y PDF.</p>
-                        <span class="opacity-70">Tecnologías</span>
+                        <span class="text-azul-claro opacity-70">Tecnologías</span>
                         <ul class="flex flex-wrap justify-between gap-4 mb-8">
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/php.png" alt="Logo de PHP" class="w-10">PHP</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/html.png" alt="Logo de HTML" class="w-10">HTML</li>
@@ -52,38 +54,38 @@
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/js.png" alt="Logo de JavaScript" class="w-10">JavaScript</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
                         </ul>
-                        <a href="" class="flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
+                        <a href="https://github.com/Joaquin-Julian/Gestion-Museo" rel="noopener noreferrer" target="_blank" class="project-link">
                             <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
                             <span class="ml-2">Enlace a GitHub</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="basis-2/5 p-4 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300]">
-                    <img src="./assets/images/projects/peluqueria.png" alt="Captura de la aplicación de gestión de peluquería" class="mb-5">
+                <div class="project-card basis-2/5 p-4 rounded-xl flex flex-col mb-10">
+                    <img src="./assets/images/projects/peluqueria.png" alt="Captura de la aplicación de gestión de peluquería" class="project-image mb-5">
                     <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2">Aplicación de gestión de una peluquería</h3>
+                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Aplicación de gestión de una peluquería</h3>
                         <p class="mb-8">Aplicación personalizada para la peluquería Dream's de Badalona, adaptada a sus necesidades: control de inventario, clientes, servicios, reservas y facturación; sistema de registro
                             y gestión de usuarios.</p>
-                        <span class="opacity-70 mt-5">Tecnologías</span>
+                        <span class="text-azul-claro opacity-70 mt-5">Tecnologías</span>
                         <ul class="flex flex-wrap gap-4 mb-8">
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/java.png" alt="Logo de Java" class="w-10">Java</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/JavaFX.png" alt="Logo de JavaFX" class="w-10">JavaFX</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
                         </ul>
-                        <a href="" class="flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
+                        <a href="https://github.com/Joaquin-Julian/Peluqueria-Dreams" rel="noopener noreferrer" target="_blank" class="project-link flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2 mt-20">
                             <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
                             <span class="ml-2">Enlace a GitHub</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="basis-2/5 p-4 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300]">
-                    <img src="./assets/images/projects/tienda.png" alt="Captura de la tienda virtual" class="mb-5">
+                <div class="project-card basis-2/5 p-4 rounded-xl flex flex-col mb-10">
+                    <img src="./assets/images/projects/tienda.png" alt="Captura de la tienda virtual" class="project-image mb-5">
                     <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2">Tienda virtual / E-commerce</h3>
+                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Tienda virtual / E-commerce</h3>
                         <p class="mb-8">Tienda virtual de instrumentos musicales. Incluye chatbot con inteligencia artificial, pasarela de pago, sistema de inicio de sesión y parte de administrador.</p>
-                        <span class="opacity-70 mt-5">Tecnologías</span>
+                        <span class="text-azul-claro opacity-70 mt-5">Tecnologías</span>
                         <ul class="flex flex-wrap gap-4 mb-8">
                             <li class="flex items-center"><img src="./assets/images/icons/laravel.png" alt="Logo de Laravel" class="w-16">Laravel</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/js.png" alt="Logo de JavaScript" class="w-10">JavaScript</li>
@@ -92,19 +94,19 @@
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/css.png" alt="Logo de CSS" class="w-10">CSS</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
                         </ul>
-                        <a href="" class="flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
+                        <a href="https://github.com/Joaquin-Julian/Tienda-virtual" rel="noopener noreferrer" target="_blank" class="project-link flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
                             <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
                             <span class="ml-2">Enlace a GitHub</span>
                         </a>
                     </div>
                 </div>
-
-                <div class="basis-2/5 p-4 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300]">
-                    <img src="./assets/images/projects/doorbellClicker.png" alt="Captura del juego tipo clicker" class="mb-5">
+                
+                <div class="project-card basis-2/5 p-4 rounded-xl flex flex-col mb-10">
+                    <img src="./assets/images/projects/doorbellClicker.png" alt="Captura del juego tipo clicker" class="project-image mb-5">
                     <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2">Clicker game</h3>
+                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Clicker game</h3>
                         <p class="mb-8">Juego al estilo de Cookie Clicker, con sistema de registro, clasificación y llamadas a una API personalizada.</p>
-                        <span class="opacity-70 mt-5">Tecnologías</span>
+                        <span class="text-azul-claro opacity-70 mt-5">Tecnologías</span>
                         <ul class="flex flex-wrap gap-4 mb-8">
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/react.png" alt="Logo de React" class="w-10">React</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/node.png" alt="Logo de Node.js" class="w-10">Node.js</li>
@@ -112,7 +114,7 @@
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/css.png" alt="Logo de CSS" class="w-10">CSS</li>
                             <li class="flex items-center gap-2"><img src="./assets/images/icons/MongoDB.png" alt="Logo de MongoDB" class="w-10">MongoDB</li>
                         </ul>
-                        <a href="" class="flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
+                        <a href="https://github.com/MiguelAngelMateos/doorbell_clicker" rel="noopener noreferrer" target="_blank" class="project-link flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
                             <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
                             <span class="ml-2">Enlace a GitHub</span>
                         </a>
@@ -121,12 +123,12 @@
             </div>
         </section>
 
-        <section id="skills" class="flex flex-col gap-20 w-400 items-center">
+        <section id="skills" class="flex flex-col gap-10 w-400 items-center">
             <div>
                 <h2 class="text-amarillo-1 text-3xl mb-8">Habilidades</h2>
             </div>
             <div class="flex gap-12">
-                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300] items-center h-fit">
+                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 items-center h-fit">
                     <h3 class="text-xl mb-4 opacity-70">Backend</h3>
                     <ul class="flex flex-wrap gap-10 mb-8 justify-center">
                         <li class="flex items-center gap-2"><img src="./assets/images/icons/node.png" alt="Logo de Node.js" class="w-10">Node.js</li>
@@ -135,7 +137,7 @@
                         <li class="flex items-center gap-2 ml-8"><img src="./assets/images/icons/php.png" alt="Logo de PHP" class="w-10">PHP</li>
                     </ul>            
                 </div>
-                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300] items-center h-fit">
+                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 items-center h-fit">
                     <h3 class="text-xl mb-4 opacity-70">Frontend</h3>
                     <ul class="flex flex-wrap gap-10 mb-8 justify-center">
                         <li class="flex items-center gap-2"><img src="./assets/images/icons/react.png" alt="Logo de React" class="w-10">React</li>
@@ -146,7 +148,7 @@
                         <li class="flex items-center gap-2"><img src="./assets/images/icons/JavaFX.png" alt="Logo de JavaFX" class="w-10">JavaFX</li>
                     </ul>            
                 </div>
-                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 drop-shadow-[0_5px_15px_#FFC300] items-center h-fit">
+                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 items-center h-fit">
                     <h3 class="text-xl mb-4 opacity-70">Otras</h3>
                     <ul class="flex flex-wrap gap-10 mb-8 justify-center">
                         <li class="flex items-center gap-2"><img src="./assets/images/icons/MongoDB.png" alt="Logo de MongoDB" class="w-10">MongoDB</li>
@@ -156,7 +158,15 @@
                     </ul>            
                 </div>
             </div>
-            
+        </section>
+        <section id="contact" class="flex flex-col gap-10 w-400 items-center">
+            <h2 class="text-amarillo-1 text-3xl mb-8">Contactos</h2>
+            <div class="p-10 rounded-xl bg-negro flex gap-4 mb-10 items-center h-fit">
+                <img src="./assets/images/icons/gmail.png" alt="Logo gmail" class="w-10 h-auto">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jjuliangalvez03@gmail.com" target="_blank" rel="noopener noreferrer" class="mr-10">jjuliangalvez03@gmail.com</a>
+                <img src="./assets/images/icons/whattsap.png" alt="Logo gmail" class="w-10 h-auto">
+                <span class="mr-10">+34 640 17 24 32</span>
+            </div>
         </section>
     </main>    
 </body>
