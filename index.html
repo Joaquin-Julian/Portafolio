@@ -5,22 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio de Joaquín Julián</title>
     <link rel="stylesheet" href="assets/output.css">
+
+    <script>
+        function syncWidths() {
+        const padre = document.getElementById("padre");
+        const hijos = document.getElementsByClassName("hijo");
+
+        for (let i = 0; i < hijos.length; i++) {
+            hijos[i].style.width = `${padre.offsetWidth}px`;
+        }
+    }
+
+    window.addEventListener("load", syncWidths);
+    window.addEventListener("resize", syncWidths);
+    </script>
 </head>
-<body class="flex flex-col justify-center items-center gap-10">
-    <header class="flex justify-center p-10 gap-10">
-        <a href="#about_me" class="header_links text-xl text-blanco">Sobre mí</a>
-        <a href="#projects" class="header_links text-xl text-blanco">Proyectos</a>
-        <a href="#skills" class="header_links text-xl text-blanco">Habilidades</a>
-        <a href="#contact" class="header_links text-xl text-blanco">Contacto</a>
+<body class="bg-negro text-blanco">
+    <header class="flex justify-center p-6 md:p-10">
+        <ul class="flex hidden sm:flex sm:gap-[10vw] md:gap-[5vw] text-xl">
+            <li><a href="#about_me" class="header_links text-blanco">Sobre mí</a></li>
+            <li><a href="#projects" class="header_links text-l text-blanco">Proyectos</a></li>
+            <li><a href="#skills" class="header_links text-l text-blanco">Habilidades</a></li>
+            <li><a href="#contact" class="header_links text-l text-blanco">Contacto</a></li>
+        </ul>
     </header>
-    <main class="flex flex-col items-center gap-20">
-        <section id="about_me" class="flex flex-col gap-10 w-1/3">
-            <div class="flex gap-10">
-                <img src="./assets/images/foto.jpeg" alt="Foto de Joaquín Julián" class="rounded-full w-60 h-auto">
-                <div class="flex flex-col justify-center">
-                    <h1 class="text-5xl text-amarillo-1 mb-2">Joaquín Julián</h1>
-                    <h2>Software developer</h2>
-                    <div class="mt-10 flex gap-5">
+    <main class="flex flex-col items-center md:mt-10">
+
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="about_me" class="flex flex-col items-center w-max">
+            <div id="padre" class="flex gap-10 items-center">
+                <img src="./assets/images/foto.jpeg" alt="Foto de Joaquín Julián" class="hidden sm:block rounded-full sm:w-[20vw] xl:w-[10vw] fade_edges">
+                <div class="flex flex-col gap-10">
+                    <div class="flex flex-col items-center sm:items-start gap-2">
+                        <h1 class="text-5xl text-amarillo-1">Joaquín Julián</h1>
+                        <h2 class="w-max">Software developer</h2>
+                    </div>
+                    <div class="flex gap-6 justify-center sm:justify-start">
                         <a href="https://github.com/Joaquin-Julian" rel="noopener noreferrer" target="_blank" class="bg-blanco w-10 h-10 rounded-full flex items-center justify-center hover:bg-amarillo-1 transition-colors duration-300">
                             <img src="./assets/images/icons/github.png" alt="Logo de GitHub" class="w-2/3 h-2/3">
                         </a>
@@ -29,145 +49,23 @@
                         </a>
                         <a href="cv.pdf" download class="descargar_curriculum">
                             <button><Span class="cursor-pointer">Descargar currículum</span></button>
-                        </a>                    
-                    </div>              
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div>
-                <p>Desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de escritorio. Me apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente.</p>
-            </div>
-        </section>
-        <section id="projects" class="flex flex-col w-3/4 mx-20 items-center">
-            <h2 class="text-amarillo-1 text-3xl mb-20">Proyectos</h2>
-            <div class="flex flex-wrap gap-20 justify-center">
-                <div class="project-card">
-                    <img src="./assets/images/projects/museo.png" alt="Captura de la aplicación de gestión del museo" class="project-image">
-                    <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Aplicación de gestión de un museo</h3>
-                        <p class="mb-8">Aplicación personalizada para el museo Apel·les Fenosa, adaptada a sus necesidades: control de inventario, exposiciones, ubicaciones y restauraciones de las obras; sistema de registro
-                            y gestión de usuarios; generación de copias de seguridad y exportación de datos a Excel y PDF.</p>
-                        <span class="text-azul-claro opacity-70">Tecnologías</span>
-                        <ul class="flex flex-wrap justify-between gap-4 mb-8">
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/php.png" alt="Logo de PHP" class="w-10">PHP</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/html.png" alt="Logo de HTML" class="w-10">HTML</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/css.png" alt="Logo de CSS" class="w-10">CSS/SCSS</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/js.png" alt="Logo de JavaScript" class="w-10">JavaScript</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
-                        </ul>
-                        <a href="https://github.com/Joaquin-Julian/Gestion-Museo" rel="noopener noreferrer" target="_blank" class="project-link">
-                            <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
-                            <span class="ml-2">Enlace a GitHub</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card basis-2/5 p-4 rounded-xl flex flex-col mb-10">
-                    <img src="./assets/images/projects/peluqueria.png" alt="Captura de la aplicación de gestión de peluquería" class="project-image mb-5">
-                    <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Aplicación de gestión de una peluquería</h3>
-                        <p class="mb-8">Aplicación personalizada para la peluquería Dream's de Badalona, adaptada a sus necesidades: control de inventario, clientes, servicios, reservas y facturación; sistema de registro
-                            y gestión de usuarios.</p>
-                        <span class="text-azul-claro opacity-70 mt-5">Tecnologías</span>
-                        <ul class="flex flex-wrap gap-4 mb-8">
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/java.png" alt="Logo de Java" class="w-10">Java</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/JavaFX.png" alt="Logo de JavaFX" class="w-10">JavaFX</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
-                        </ul>
-                        <a href="https://github.com/Joaquin-Julian/Peluqueria-Dreams" rel="noopener noreferrer" target="_blank" class="project-link flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2 mt-20">
-                            <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
-                            <span class="ml-2">Enlace a GitHub</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card basis-2/5 p-4 rounded-xl flex flex-col mb-10">
-                    <img src="./assets/images/projects/tienda.png" alt="Captura de la tienda virtual" class="project-image mb-5">
-                    <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Tienda virtual / E-commerce</h3>
-                        <p class="mb-8">Tienda virtual de instrumentos musicales. Incluye chatbot con inteligencia artificial, pasarela de pago, sistema de inicio de sesión y parte de administrador.</p>
-                        <span class="text-azul-claro opacity-70 mt-5">Tecnologías</span>
-                        <ul class="flex flex-wrap gap-4 mb-8">
-                            <li class="flex items-center"><img src="./assets/images/icons/laravel.png" alt="Logo de Laravel" class="w-16">Laravel</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/js.png" alt="Logo de JavaScript" class="w-10">JavaScript</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/tailwindcss.png" alt="Logo de Tailwind CSS" class="w-10">Tailwind CSS</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/html.png" alt="Logo de HTML" class="w-10">HTML</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/css.png" alt="Logo de CSS" class="w-10">CSS</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
-                        </ul>
-                        <a href="https://github.com/Joaquin-Julian/Tienda-virtual" rel="noopener noreferrer" target="_blank" class="project-link flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
-                            <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
-                            <span class="ml-2">Enlace a GitHub</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card basis-2/5 p-4 rounded-xl flex flex-col mb-10">
-                    <img src="./assets/images/projects/doorbellClicker.png" alt="Captura del juego tipo clicker" class="project-image mb-5">
-                    <div class="p-4 pt-0">
-                        <h3 class="mt-5 text-xl mb-2 text-amarillo-1">Clicker game</h3>
-                        <p class="mb-8">Juego al estilo de Cookie Clicker, con sistema de registro, clasificación y llamadas a una API personalizada.</p>
-                        <span class="text-azul-claro opacity-70 mt-5">Tecnologías</span>
-                        <ul class="flex flex-wrap gap-4 mb-8">
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/react.png" alt="Logo de React" class="w-10">React</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/node.png" alt="Logo de Node.js" class="w-10">Node.js</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/tailwindcss.png" alt="Logo de Tailwind CSS" class="w-10">Tailwind CSS</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/css.png" alt="Logo de CSS" class="w-10">CSS</li>
-                            <li class="flex items-center gap-2"><img src="./assets/images/icons/MongoDB.png" alt="Logo de MongoDB" class="w-10">MongoDB</li>
-                        </ul>
-                        <a href="https://github.com/MiguelAngelMateos/doorbell_clicker" rel="noopener noreferrer" target="_blank" class="project-link flex items-center text-azul-oscuro bg-blanco hover:bg-amarillo-1 transition-colors duration-300 w-fit rounded-full px-4 py-2">
-                            <img src="./assets/images/icons/github.png" alt="Enlace al repositorio en GitHub" class="h-6 w-auto">
-                            <span class="ml-2">Enlace a GitHub</span>
-                        </a>
-                    </div>
+            <div class="my-10 flex flex-col gap-4 hijo">
+                <h2 class="text-3xl text-amarillo-1">Sobre mi</h2>
+                <div class="border-l-1 border-white/50 pl-2">
+                    <p>Desarrollador de software con experiencia en la creación de aplicaciones web, móviles y de escritorio. 
+                    Me apasiona aprender nuevas tecnologías y mejorar mis habilidades constantemente.</p>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="flex flex-col gap-10 w-400 items-center">
-            <div>
-                <h2 class="text-amarillo-1 text-3xl mb-8">Habilidades</h2>
-            </div>
-            <div class="flex gap-12">
-                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 items-center h-fit">
-                    <h3 class="text-xl mb-4 opacity-70">Backend</h3>
-                    <ul class="flex flex-wrap gap-10 mb-8 justify-center">
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/node.png" alt="Logo de Node.js" class="w-10">Node.js</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/laravel.png" alt="Logo de Laravel" class="w-16">Laravel</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/java.png" alt="Logo de Java" class="w-10">Java</li>
-                        <li class="flex items-center gap-2 ml-8"><img src="./assets/images/icons/php.png" alt="Logo de PHP" class="w-10">PHP</li>
-                    </ul>            
-                </div>
-                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 items-center h-fit">
-                    <h3 class="text-xl mb-4 opacity-70">Frontend</h3>
-                    <ul class="flex flex-wrap gap-10 mb-8 justify-center">
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/react.png" alt="Logo de React" class="w-10">React</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/tailwindcss.png" alt="Logo de Tailwindcss" class="w-4">Tailwindcss</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/css.png" alt="Logo de CSS" class="w-10">CSS/SCSS</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/js.png" alt="Logo de Javascript" class="w-10">Javascript</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/html.png" alt="Logo de HTML" class="w-10">HTML</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/JavaFX.png" alt="Logo de JavaFX" class="w-10">JavaFX</li>
-                    </ul>            
-                </div>
-                <div class="p-10 rounded-xl bg-negro flex flex-col mb-10 items-center h-fit">
-                    <h3 class="text-xl mb-4 opacity-70">Otras</h3>
-                    <ul class="flex flex-wrap gap-10 mb-8 justify-center">
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/MongoDB.png" alt="Logo de MongoDB" class="w-10">MongoDB</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/mysql.png" alt="Logo de MySQL" class="w-10">MySQL</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/docker.png" alt="Logo de Docker" class="w-10">Docker</li>
-                        <li class="flex items-center gap-2"><img src="./assets/images/icons/githubBlanco.png" alt="PHP logo" class="w-10">Github</li>
-                    </ul>            
-                </div>
-            </div>
+        <!-- SECCIÓN PROYECTOS -->
+        <section class="flex flex-col w-max hijo">
+             
         </section>
-        <section id="contact" class="flex flex-col gap-10 w-400 items-center">
-            <h2 class="text-amarillo-1 text-3xl mb-8">Contactos</h2>
-            <div class="p-10 rounded-xl bg-negro flex gap-4 mb-10 items-center h-fit">
-                <img src="./assets/images/icons/gmail.png" alt="Logo gmail" class="w-10 h-auto">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jjuliangalvez03@gmail.com" target="_blank" rel="noopener noreferrer" class="mr-10">jjuliangalvez03@gmail.com</a>
-                <img src="./assets/images/icons/whattsap.png" alt="Logo gmail" class="w-10 h-auto">
-                <span class="mr-10">+34 640 17 24 32</span>
-            </div>
-        </section>
-    </main>    
+    </main>   
 </body>
 </html>
