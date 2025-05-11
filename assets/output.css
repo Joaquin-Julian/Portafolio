@@ -172,9 +172,6 @@
   }
 }
 @layer utilities {
-  .m-10 {
-    margin: calc(var(--spacing) * 10);
-  }
   .mx-20 {
     margin-inline: calc(var(--spacing) * 20);
   }
@@ -220,11 +217,11 @@
   .flex {
     display: flex;
   }
-  .grid {
-    display: grid;
-  }
   .hidden {
     display: none;
+  }
+  .inline-block {
+    display: inline-block;
   }
   .table {
     display: table;
@@ -240,9 +237,6 @@
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
-  }
-  .h-100 {
-    height: calc(var(--spacing) * 100);
   }
   .h-auto {
     height: auto;
@@ -288,9 +282,6 @@
   }
   .w-fit {
     width: fit-content;
-  }
-  .w-full {
-    width: 100%;
   }
   .w-max {
     width: max-content;
@@ -346,8 +337,14 @@
   .gap-12 {
     gap: calc(var(--spacing) * 12);
   }
+  .gap-14 {
+    gap: calc(var(--spacing) * 14);
+  }
   .gap-20 {
     gap: calc(var(--spacing) * 20);
+  }
+  .rounded {
+    border-radius: 0.25rem;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -359,9 +356,17 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-l {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 1px;
+  .border-1 {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-b {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
+  }
+  .border-b-1 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 1px;
   }
   .border-l-1 {
     border-left-style: var(--tw-border-style);
@@ -374,6 +379,15 @@
     border-color: color-mix(in srgb, #fff 50%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-white) 50%, transparent);
+    }
+  }
+  .border-b-white {
+    border-bottom-color: var(--color-white);
+  }
+  .border-b-white\/50 {
+    border-bottom-color: color-mix(in srgb, #fff 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-bottom-color: color-mix(in oklab, var(--color-white) 50%, transparent);
     }
   }
   .bg-blanco {
@@ -397,17 +411,14 @@
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
   }
-  .py-10 {
-    padding-block: calc(var(--spacing) * 10);
-  }
   .pt-0 {
     padding-top: calc(var(--spacing) * 0);
   }
+  .pb-4 {
+    padding-bottom: calc(var(--spacing) * 4);
+  }
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);
-  }
-  .pl-4 {
-    padding-left: calc(var(--spacing) * 4);
   }
   .text-3xl {
     font-size: var(--text-3xl);
@@ -432,6 +443,15 @@
   }
   .text-blanco {
     color: var(--color-blanco);
+  }
+  .text-blanco\/70 {
+    color: color-mix(in srgb, #FAF0E6 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-blanco) 70%, transparent);
+    }
+  }
+  .text-negro {
+    color: var(--color-negro);
   }
   .underline {
     text-decoration-line: underline;
@@ -479,6 +499,11 @@
       width: 20vw;
     }
   }
+  .sm\:flex-row {
+    @media (width >= 40rem) {
+      flex-direction: row;
+    }
+  }
   .sm\:items-start {
     @media (width >= 40rem) {
       align-items: flex-start;
@@ -489,9 +514,25 @@
       justify-content: flex-start;
     }
   }
+  .sm\:gap-10 {
+    @media (width >= 40rem) {
+      gap: calc(var(--spacing) * 10);
+    }
+  }
   .sm\:gap-\[10vw\] {
     @media (width >= 40rem) {
       gap: 10vw;
+    }
+  }
+  .sm\:border-none {
+    @media (width >= 40rem) {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+  .sm\:p-0 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 0);
     }
   }
   .md\:mt-10 {
@@ -541,50 +582,6 @@
 .header_links:hover::before {
   transform-origin: left;
   transform: scaleX(1);
-}
-.descargar_curriculum {
-  outline: none;
-  cursor: pointer;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  position: relative;
-  display: inline-block;
-  letter-spacing: 0.05rem;
-  border-radius: 500px;
-  overflow: hidden;
-  background: #FFC300;
-  color: #001d3d;
-  font-weight: 700;
-}
-.descargar_curriculum span {
-  position: relative;
-  z-index: 10;
-  transition: color 0.4s;
-}
-.descargar_curriculum:hover span {
-  color: FAF0E6;
-}
-.descargar_curriculum::before, .descargar_curriculum::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-.descargar_curriculum::before {
-  content: "";
-  background: #FAF0E6;
-  width: 120%;
-  left: -10%;
-  transform: skew(30deg);
-  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-}
-.descargar_curriculum:hover::before {
-  transform: translate3d(100%, 0, 0);
 }
 @property --tw-rotate-x {
   syntax: "*";
